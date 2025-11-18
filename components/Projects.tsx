@@ -21,7 +21,7 @@ const projects = [
     title: "Farm Ferry",
     description: "A website for an agricultural company.",
     image: "/project3.png",
-    link: "farm-ferry.netlify.app",
+    link: "https://farmferry.netlify.app/",
   },
   {
     title: "AgriconnectHub",
@@ -73,6 +73,7 @@ export default function Projects() {
                 {project.link && (
                   <Link
                     href={project.link}
+                    target="blank"
                     className="mt-4 inline-block text-[#001f4d] font-medium hover:underline"
                   >
                     View Project →

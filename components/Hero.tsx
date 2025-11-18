@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image"; // 1. IMPORT Image
 import { ArrowRight } from "lucide-react";
 import { motion, Variants, Easing } from "framer-motion";
 
@@ -29,14 +30,23 @@ export default function Hero() {
 
   return (
     <section
-      className="relative bg-zinc-50 bg-cover bg-center bg-no-repeat" id="hero"
-      style={{ backgroundImage: "url('/hero.jpg')" }} // Replace with your image path
+      className="relative bg-zinc-50" // 3. REMOVE CSS background style
+      id="hero"
     >
+      {/* --- BACKGROUND IMAGE WITH NEXT/IMAGE --- */}
+      <Image
+        src="/hero.jpg"
+        alt="Background image illustrating tech innovation"
+        fill // Makes the image fill the parent container
+        priority // Ensures image loads with high priority
+        className="object-cover"
+      />
+      
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/40"></div>
 
       <motion.div
-        className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 flex flex-col items-center md:items-start text-center md:text-left"
+        className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 flex flex-col items-center md:items-start text-center md:text-left" // Added z-10 to lift content above the image
         variants={container}
         initial="hidden"
         animate="visible"

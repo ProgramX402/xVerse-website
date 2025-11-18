@@ -14,7 +14,6 @@ export default function Navbar() {
     exit: { opacity: 0, height: 0 },
   };
 
-  // Smooth scroll
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -24,16 +23,13 @@ export default function Navbar() {
     setOpen(false);
   };
 
-  // Detect active section using Intersection Observer
   useEffect(() => {
     const sections = ["hero", "about", "services", "projects", "initiatives", "contact"];
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
+          if (entry.isIntersecting) setActive(entry.target.id);
         });
       },
       { threshold: 0.6 }
@@ -47,7 +43,6 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  // Reusable link renderer
   const MenuLink = ({
     id,
     label,
@@ -95,13 +90,19 @@ export default function Navbar() {
   return (
     <header className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
+
+        {/* Logo + Name */}
         <a
           href="#hero"
           onClick={() => scrollToSection("hero")}
-          className="text-2xl font-bold text-[#001f4d]"
+          className="flex items-center gap-2"
         >
-          xVerse
+          <img
+            src="/logo.png"      // <-- replace with your real logo path
+            alt="xVerse Logo"
+            className="w-8 h-8 object-contain"
+          />
+          <span className="text-2xl font-bold text-[#001f4d]">xVerse</span>
         </a>
 
         {/* Desktop Menu */}

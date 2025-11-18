@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+// Initialize the Geist fonts (assuming you have them installed)
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -12,6 +13,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// --- METADATA EXPORT ---
+// This Metadata object is correctly exported and handles SEO/Social tags
 export const metadata: Metadata = {
   title: "xVerse Platforms - Innovative Tech Solutions & Digital Transformation",
   description: "xVerse Platforms is a leading tech company providing innovative solutions, digital transformation services, and cutting-edge technology to empower businesses and drive growth.",
@@ -37,7 +40,8 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.xverseplatforms.netlify.app'),
+  // Ensure the URL is correct for your deployed site
+  metadataBase: new URL('https://www.xverseplatforms.netlify.app'), 
   alternates: {
     canonical: '/',
   },
@@ -83,6 +87,7 @@ export const metadata: Metadata = {
   },
 };
 
+// --- ROOT LAYOUT COMPONENT ---
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -90,13 +95,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* NOTE: In modern Next.js App Router, the <head> element is typically 
+        managed automatically by the exported `metadata` object above. 
+        Only elements that cannot be represented in `metadata` (like the 
+        JSON-LD script tag and certain meta/link tags) should be here.
+      */}
       <head>
+        {/* Favicon/Apple Touch Icons */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* FIX APPLIED: Removed the link to the non-existent site.webmanifest */}
+        
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* JSON-LD Script for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
