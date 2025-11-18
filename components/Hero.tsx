@@ -73,18 +73,18 @@ export default function Hero() {
           className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           variants={item}
         >
-          <Link
-            href="/services"
+          <a
+            href="#services"
             className="px-6 py-3 bg-[#001f4d] text-white font-medium rounded-lg hover:bg-[#003366] transition flex items-center gap-2 justify-center"
           >
             Get Started <ArrowRight size={18} />
-          </Link>
-          <Link
-            href="/about"
+          </a>
+          <a
+            href="#about"
             className="px-6 py-3 border border-white text-white font-medium rounded-lg hover:bg-white hover:text-[#001f4d] transition text-center"
           >
             Learn More
-          </Link>
+          </a>
         </motion.div>
       </motion.div>
     </section>

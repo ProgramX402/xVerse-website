@@ -39,7 +39,7 @@ export default function AboutUs() {
       opacity: 1, 
       y: 0, 
       transition: { 
-        duration: 0.8, 
+        duration: 0.2, 
         ease: "easeOut" as Easing 
       } 
     },
@@ -88,7 +88,7 @@ export default function AboutUs() {
 
           <motion.div className="mt-8" variants={fadeInUp}>
             <a
-              href="/contact"
+              href="#contact"
               className="px-6 py-3 bg-[#001f4d] text-white font-medium rounded-lg hover:bg-[#003366] transition"
             >
               Get in Touch
