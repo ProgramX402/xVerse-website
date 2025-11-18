@@ -6,34 +6,30 @@ import Link from "next/link";
 
 const initiatives = [
   {
-    title: "Startup Nexus",
-    description: "A platform connecting early-stage startups with investors.",
-    logo: "/initiatives/nexus.jpg",
-    link: "https://startupnexus.com",
+    title: "Tech for the less privileged.",
+    description: "A platform providing tech training and innovation support for the less privileged.",
+    logo: "/init1.jpg",
   },
   {
-    title: "AgroTech Hub",
-    description: "Innovating agriculture with technology solutions for farmers.",
-    logo: "/initiatives/agrotech.jpg",
-    link: "https://agrotechhub.com",
+    title: "Rural Innovation Network",
+    description: "A movement aimed at bridging thr gap between rural areas and modern technology.",
+    logo: "/init2.jpg",
   },
   {
-    title: "EduGrowth",
-    description: "Upskilling students and professionals through digital learning.",
-    logo: "/initiatives/edugrowth.jpg",
-    link: "https://edugrowth.com",
+    title: "StuNnovation",
+    description: "Encouraging innovation by upskilling students.",
+    logo: "/init3.jpg",
   },
   {
-    title: "GreenSolutions",
-    description: "Sustainable and eco-friendly solutions for modern businesses.",
-    logo: "/initiatives/greensolutions.jpg",
-    link: "https://greensolutions.com",
+    title: "MSME Ignition Network",
+    description: "Reliable ecosytem for MSMEs to thrive.",
+    logo: "/init4.jpg",
   },
 ];
 
 export default function Initiatives() {
   return (
-    <section className="bg-zinc-50 py-20">
+    <section className="bg-zinc-50 py-20" id="initiatives">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-[#001f4d]">
           Our Initiatives
@@ -69,15 +65,6 @@ export default function Initiatives() {
               </div>
               <h3 className="text-xl font-semibold text-[#001f4d]">{initiative.title}</h3>
               <p className="mt-2 text-gray-600 text-sm">{initiative.description}</p>
-              {initiative.link && (
-                <Link
-                  href={initiative.link}
-                  target="_blank"
-                  className="mt-4 inline-block text-[#001f4d] font-medium hover:underline"
-                >
-                  Learn More →
-                </Link>
-              )}
             </motion.div>
           ))}
         </motion.div>

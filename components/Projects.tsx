@@ -6,34 +6,34 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "Project Alpha",
-    description: "An innovative ERP solution for small businesses.",
-    image: "/projects/project1.jpg",
-    link: "/projects/project-alpha",
+    title: "Medicare",
+    description: "A smart hospital management dashboard.",
+    image: "/project1.png",
+    link: "https://medicareconnect.netlify.app/",
   },
   {
-    title: "Project Beta",
-    description: "A web platform connecting ideas to opportunities.",
-    image: "/projects/project2.jpg",
-    link: "/projects/project-beta",
+    title: "Orphanage Website",
+    description: "A cool public facing website for JCRFCF orphanage.",
+    image: "/project2.png",
+    link: "https://joschristianrefuge.netlify.app/",
   },
   {
-    title: "Project Gamma",
-    description: "Training platform for skill development and growth.",
-    image: "/projects/project3.jpg",
-    link: "/projects/project-gamma",
+    title: "Farm Ferry",
+    description: "A website for an agricultural company.",
+    image: "/project3.png",
+    link: "farm-ferry.netlify.app",
   },
   {
-    title: "Project Delta",
-    description: "Custom software solution for enterprise clients.",
-    image: "/projects/project4.jpg",
-    link: "/projects/project-delta",
+    title: "AgriconnectHub",
+    description: "A software that provide analytics and insights for farmers.",
+    image: "/project4.png",
+    link: "https://msmexhub.web.app/",
   },
 ];
 
 export default function Projects() {
   return (
-    <section className="bg-zinc-50 py-20">
+    <section className="bg-zinc-50 py-20" id="projects">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-[#001f4d]">
           Our Projects

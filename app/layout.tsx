@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.xverseplatforms.com'),
+  metadataBase: new URL('https://www.xverseplatforms.netlify.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "xVerse Platforms - Innovative Tech Solutions",
     description: "Empowering businesses with cutting-edge technology solutions and digital transformation services.",
-    url: 'https://www.xverseplatforms.com',
+    url: 'https://www.xverseplatforms.netlify.app',
     siteName: 'xVerse Platforms',
     images: [
       {
@@ -75,8 +75,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
+    google: 'google-site-verification=2DHlK8ao5_J2eqzJlDiSM8GKmTxj_G3mvG0yB1R4J1o',
   },
   other: {
     'theme-color': '#001f4d',
@@ -105,8 +104,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "xVerse Platforms",
-              "url": "https://www.xverseplatforms.com",
-              "logo": "https://www.xverseplatforms.com/logo.png",
+              "url": "https://www.xverseplatforms.netlify.app",
               "description": "Leading tech company providing innovative solutions and digital transformation services.",
               "address": {
                 "@type": "PostalAddress",

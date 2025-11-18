@@ -46,7 +46,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section className="bg-zinc-50 py-20 overflow-hidden">
+    <section className="bg-zinc-50 py-20 overflow-hidden" id="about">
       <motion.div
         className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12"
         variants={container}

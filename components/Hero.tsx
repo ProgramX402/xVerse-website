@@ -29,7 +29,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative bg-zinc-50 bg-cover bg-center bg-no-repeat"
+      className="relative bg-zinc-50 bg-cover bg-center bg-no-repeat" id="hero"
       style={{ backgroundImage: "url('/hero.jpg')" }} // Replace with your image path
     >
       {/* Overlay for better text readability */}

@@ -46,7 +46,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-zinc-50 py-20">
+    <section className="bg-zinc-50 py-20" id="services">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-[#001f4d] text-center">
           Our Services

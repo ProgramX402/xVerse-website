@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -14,63 +13,100 @@ export default function Navbar() {
     exit: { opacity: 0, height: 0 },
   };
 
+  // Function to handle smooth scrolling to sections
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setOpen(false); // Close mobile menu after clicking
+  };
+
   return (
     <header className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-[#001f4d]">
+        <a 
+          href="#hero" 
+          onClick={() => scrollToSection("hero")}
+          className="text-2xl font-bold text-[#001f4d]"
+        >
           xVerse
-        </Link>
+        </a>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
           <li>
-            <Link
-              href="/"
+            <a
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("hero");
+              }}
               className="hover:text-[#001f4d] transition-colors"
             >
               Home
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/about"
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("about");
+              }}
               className="hover:text-[#001f4d] transition-colors"
             >
               About
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/services"
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("services");
+              }}
               className="hover:text-[#001f4d] transition-colors"
             >
               Services
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/projects"
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("projects");
+              }}
               className="hover:text-[#001f4d] transition-colors"
             >
               Projects
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/initiatives"
+            <a
+              href="#initiatives"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("initiatives");
+              }}
               className="hover:text-[#001f4d] transition-colors"
             >
               Initiatives
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              href="/contact"
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("contact");
+              }}
               className="px-5 py-2 rounded-full bg-[#001f4d] text-white hover:bg-[#003366] transition"
             >
               Contact Us
-            </Link>
+            </a>
           </li>
         </ul>
 
@@ -96,38 +132,76 @@ export default function Navbar() {
           >
             <ul className="flex flex-col space-y-4 px-6 py-6 text-gray-700 font-medium">
               <li>
-                <Link href="/" onClick={() => setOpen(false)} className="hover:text-[#001f4d] transition-colors">
+                <a 
+                  href="#hero" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("hero");
+                  }} 
+                  className="hover:text-[#001f4d] transition-colors"
+                >
                   Home
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/about" onClick={() => setOpen(false)} className="hover:text-[#001f4d] transition-colors">
+                <a 
+                  href="#about" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("about");
+                  }} 
+                  className="hover:text-[#001f4d] transition-colors"
+                >
                   About
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/services" onClick={() => setOpen(false)} className="hover:text-[#001f4d] transition-colors">
+                <a 
+                  href="#services" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("services");
+                  }} 
+                  className="hover:text-[#001f4d] transition-colors"
+                >
                   Services
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/projects" onClick={() => setOpen(false)} className="hover:text-[#001f4d] transition-colors">
+                <a 
+                  href="#projects" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("projects");
+                  }} 
+                  className="hover:text-[#001f4d] transition-colors"
+                >
                   Projects
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/initiatives" onClick={() => setOpen(false)} className="hover:text-[#001f4d] transition-colors">
+                <a 
+                  href="#initiatives" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("initiatives");
+                  }} 
+                  className="hover:text-[#001f4d] transition-colors"
+                >
                   Initiatives
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  href="/contact"
-                  onClick={() => setOpen(false)}
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("contact");
+                  }}
                   className="px-5 py-2 rounded-full bg-[#001f4d] text-white text-center hover:bg-[#003366] transition"
                 >
                   Contact Us
-                </Link>
+                </a>
               </li>
             </ul>
           </motion.div>
