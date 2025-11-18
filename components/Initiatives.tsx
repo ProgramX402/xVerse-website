@@ -12,7 +12,7 @@ const initiatives = [
   },
   {
     title: "Rural Innovation Network",
-    description: "A movement aimed at bridging thr gap between rural areas and modern technology.",
+    description: "A movement aimed at bridging the gap between rural areas and modern technology.",
     logo: "/init2.jpg",
   },
   {
@@ -22,7 +22,7 @@ const initiatives = [
   },
   {
     title: "MSME Ignition Network",
-    description: "Reliable ecosytem for MSMEs to thrive.",
+    description: "Reliable and innovative ecosytem for MSMEs to thrive.",
     logo: "/init4.jpg",
   },
 ];

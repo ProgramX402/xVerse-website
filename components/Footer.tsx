@@ -40,16 +40,16 @@ export default function Footer() {
         <div>
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
           <div className="flex items-center gap-4">
-            <Link href="#" className="hover:text-gray-300">
+            <Link href="https://web.facebook.com/search/top/?q=xVerse%20Platforms" target="blank" className="hover:text-gray-300">
               <Facebook size={22} />
             </Link>
-            <Link href="#" className="hover:text-gray-300">
+            <Link href="#" target="blank" className="hover:text-gray-300">
               <Twitter size={22} />
             </Link>
-            <Link href="#" className="hover:text-gray-300">
+            <Link href="https://www.instagram.com/fortress7108/" target="blank" className="hover:text-gray-300">
               <Instagram size={22} />
             </Link>
-            <Link href="#" className="hover:text-gray-300">
+            <Link href="https://www.linkedin.com/company/xverse-platforms/" target="blank" className="hover:text-gray-300">
               <Linkedin size={22} />
             </Link>
           </div>
@@ -60,13 +60,13 @@ export default function Footer() {
           <h3 className="text-xl font-semibold mb-4">Contact</h3>
           <ul className="space-y-4 text-gray-200">
             <li className="flex items-center gap-3">
-              <Mail size={20} /> support@xverseplatforms.com
+              <Mail size={20} /> princessidebuemi@gmail.com
             </li>
             <li className="flex items-center gap-3">
-              <Phone size={20} /> +234 812 345 6789
+              <Phone size={20} /> +234 912 376 979 0
             </li>
             <li className="flex items-center gap-3">
-              <MapPin size={20} /> Lagos, Nigeria
+              <MapPin size={20} /> Jos, Nigeria
             </li>
           </ul>
         </div>

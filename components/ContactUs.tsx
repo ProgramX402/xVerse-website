@@ -46,7 +46,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-[#001f4d]">Email</h3>
-                <p className="text-black">support@xverseplatforms.com</p>
+                <p className="text-black">princessidebuemi@gmail.com</p>
               </div>
             </div>
 
@@ -56,7 +56,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-[#001f4d]">Phone</h3>
-                <p className="text-black">+234 803 123 4567</p>
+                <p className="text-black">+234 912 376 9790</p>
               </div>
             </div>
 
@@ -66,7 +66,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-[#001f4d]">Location</h3>
-                <p className="text-black">Lagos, Nigeria</p>
+                <p className="text-black">Jos, Nigeria</p>
               </div>
             </div>
           </motion.div>
