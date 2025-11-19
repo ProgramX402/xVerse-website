@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants, easeOut } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
   {
@@ -25,13 +26,29 @@ const projects = [
   },
   {
     title: "AgriconnectHub",
-    description: "A software that provide analytics and insights for farmers.",
+    description: "A software that provides analytics and insights for farmers.",
     image: "/project4.png",
     link: "https://msmexhub.web.app/",
   },
 ];
 
 export default function Projects() {
+  // Container for staggered animation
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.15 } },
+  };
+
+  // Each project card animation
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: easeOut }, // ✅ Type-safe
+    },
+  };
+
   return (
     <section className="bg-zinc-50 py-20" id="projects">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
@@ -47,24 +64,22 @@ export default function Projects() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            visible: { transition: { staggerChildren: 0.2 } },
-          }}
+          variants={containerVariants}
         >
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition cursor-pointer"
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-              }}
+              variants={itemVariants}
             >
               <div className="relative h-48 w-full">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  priority={idx === 0} // first image loads faster
                 />
               </div>
               <div className="p-6 text-left">
@@ -73,7 +88,8 @@ export default function Projects() {
                 {project.link && (
                   <Link
                     href={project.link}
-                    target="blank"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-4 inline-block text-[#001f4d] font-medium hover:underline"
                   >
                     View Project →

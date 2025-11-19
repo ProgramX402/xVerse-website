@@ -1,57 +1,57 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
-import Image from "next/image"; // 1. IMPORT Image
+import React, { useRef } from "react";
+import { motion, Variants, easeOut } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { motion, Variants, Easing } from "framer-motion";
+import Image from "next/image";
 
-export default function Hero() {
+const Hero = () => {
+  const animationDone = useRef(false);
+
   const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15, when: "beforeChildren" },
+      transition: { staggerChildren: 0.1, when: "beforeChildren" },
     },
   };
 
   const item: Variants = {
-    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
     visible: { 
       opacity: 1, 
       y: 0, 
       scale: 1, 
-      transition: { 
-        duration: 0.8, 
-        ease: "easeOut" as Easing 
-      } 
+      transition: { duration: 0.6, ease: easeOut }, 
     },
   };
 
   return (
-    <section
-      className="relative bg-zinc-50" // 3. REMOVE CSS background style
-      id="hero"
-    >
-      {/* --- BACKGROUND IMAGE WITH NEXT/IMAGE --- */}
+    <section className="relative h-screen bg-zinc-50" id="hero">
+      {/* Background Image */}
       <Image
         src="/hero.jpg"
         alt="Background image illustrating tech innovation"
-        fill // Makes the image fill the parent container
-        priority // Ensures image loads with high priority
+        fill
+        priority
+        placeholder="blur"
+        blurDataURL="/hero.jpg"
         className="object-cover"
       />
-      
-      {/* Overlay for better text readability */}
+
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
+      {/* Hero Content */}
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 flex flex-col items-center md:items-start text-center md:text-left" // Added z-10 to lift content above the image
+        className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 flex flex-col items-center md:items-start text-center md:text-left"
         variants={container}
         initial="hidden"
-        animate="visible"
+        animate={animationDone.current ? "visible" : "visible"}
+        onAnimationComplete={() => {
+          animationDone.current = true; // mark animation done
+        }}
       >
-        {/* Heading */}
         <motion.h1
           className="text-4xl md:text-6xl font-bold text-white leading-tight"
           variants={item}
@@ -59,7 +59,6 @@ export default function Hero() {
           Welcome to xVerse Platforms
         </motion.h1>
 
-        {/* Paragraph */}
         <motion.p
           className="mt-6 text-lg md:text-xl text-gray-200 max-w-lg"
           variants={item}
@@ -68,7 +67,6 @@ export default function Hero() {
           Explore our services, projects, and initiatives to grow your vision.
         </motion.p>
 
-        {/* Buttons */}
         <motion.div
           className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           variants={item}
@@ -89,4 +87,7 @@ export default function Hero() {
       </motion.div>
     </section>
   );
-}
+};
+
+// Memoize Hero to prevent unnecessary remounts
+export default React.memo(Hero);

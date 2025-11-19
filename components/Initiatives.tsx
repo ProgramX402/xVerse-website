@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { motion, Variants, easeOut } from "framer-motion";
+import Image from "next/image";
 
 const initiatives = [
   {
@@ -28,6 +28,16 @@ const initiatives = [
 ];
 
 export default function Initiatives() {
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.15 } },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } },
+  };
+
   return (
     <section className="bg-zinc-50 py-20" id="initiatives">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
@@ -43,24 +53,22 @@ export default function Initiatives() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            visible: { transition: { staggerChildren: 0.2 } },
-          }}
+          variants={containerVariants}
         >
           {initiatives.map((initiative, idx) => (
             <motion.div
               key={idx}
               className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition cursor-pointer"
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-              }}
+              variants={itemVariants}
             >
-              <div className="w-24 h-24 mb-4">
-                <img
+              <div className="w-24 h-24 mb-4 relative">
+                <Image
                   src={initiative.logo}
                   alt={initiative.title}
-                  className="w-full h-full object-cover rounded-full"
+                  fill
+                  className="object-cover rounded-full"
+                  sizes="6rem"
+                  priority={idx === 0} // first image loads faster
                 />
               </div>
               <h3 className="text-xl font-semibold text-[#001f4d]">{initiative.title}</h3>

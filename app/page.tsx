@@ -10,7 +10,6 @@ import FounderWord from "@/components/FounderWord";
 import Accomplishments from "@/components/Accomplishments";
 import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactUs";
-import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 
@@ -33,7 +32,6 @@ export default function Home() {
         <Accomplishments />
         <Testimonials />
         <ContactSection />
-        <Newsletter />
         <Footer />
         <ChatWidget />
       </main>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion, Variants, Easing } from "framer-motion";
 import { Linkedin, Twitter } from "lucide-react";
 
@@ -45,36 +46,20 @@ const teamMembers = [
 export default function TeamMembers() {
   const container: Variants = {
     hidden: {},
-    visible: { transition: { staggerChildren: 0.2 } },
+    visible: { transition: { staggerChildren: 0.15 } }, // slightly faster
   };
 
-  // Solution 1: Use a predefined easing string with type assertion
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
       y: 0, 
       transition: { 
-        duration: 0.8, 
+        duration: 0.6, // slightly faster
         ease: "easeOut" as Easing 
       } 
     },
   };
-
-  // Alternative Solution 2: Use a cubic-bezier array with proper typing
-  /*
-  const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.8, 
-        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] 
-      } 
-    },
-  };
-  */
 
   return (
     <section className="bg-zinc-50 py-20">
@@ -93,7 +78,6 @@ export default function TeamMembers() {
           viewport={{ once: true, amount: 0.2 }}
           variants={container}
         >
-          {/* Top row - 3 members */}
           <motion.div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full justify-items-center" variants={container}>
             {teamMembers.slice(0, 3).map((member, idx) => (
               <motion.div
@@ -101,10 +85,13 @@ export default function TeamMembers() {
                 className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-xs hover:shadow-2xl transition"
                 variants={fadeInUp}
               >
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  width={400}
+                  height={400}
                   className="w-full h-64 object-cover"
+                  priority={idx === 0} // load first image faster
                 />
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-semibold text-[#001f4d]">{member.name}</h3>
@@ -118,7 +105,6 @@ export default function TeamMembers() {
             ))}
           </motion.div>
 
-          {/* Bottom row - 2 members */}
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full justify-items-center" variants={container}>
             {teamMembers.slice(3).map((member, idx) => (
               <motion.div
@@ -126,9 +112,11 @@ export default function TeamMembers() {
                 className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-xs hover:shadow-2xl transition"
                 variants={fadeInUp}
               >
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  width={400}
+                  height={400}
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6 text-center">
