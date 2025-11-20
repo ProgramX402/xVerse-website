@@ -14,6 +14,7 @@ import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import FAQSection from "@/components/FAQSection";
 import WhoWeTarget from "@/components/Target";
+import Partners from "@/components/Partners";
 
 
 
@@ -34,6 +35,7 @@ export default function Home() {
         <WhoWeTarget />
         <TeamMembers />
         <FounderWord />
+        <Partners />
         <Accomplishments />
         <Testimonials />
         <FAQSection />

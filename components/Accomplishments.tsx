@@ -19,11 +19,10 @@ export default function Accomplishments() {
     },
   };
 
-  // Sample accomplishments data
+  // Updated accomplishments data (Awards removed)
   const data = [
     { number: "50+", title: "Projects Completed" },
     { number: "30+", title: "Happy Clients" },
-    { number: "10", title: "Awards Won" },
     { number: "100+", title: "Collaborations & Partnerships" },
   ];
 
@@ -41,7 +40,7 @@ export default function Accomplishments() {
         </motion.h2>
 
         <motion.div
-          className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+          className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
           variants={container}
           initial="hidden"
           whileInView="visible"

@@ -29,14 +29,14 @@ const teamMembers = [
   },
   {
     name: "Kinbest Mburs",
-    role: "Ecosystem Director and Software Engineer",
+    role: "Head of Engineering",
     image: "/team4.jpg",
     linkedin: "https://linkedin.com/in/emmanuelnwosu",
     twitter: "https://twitter.com/emmanuelnwosu",
   },
   {
     name: "Feke Alao Peters",
-    role: "Head of Partnerships and Software Engineer",
+    role: "Ecoystem & Partnerships",
     image: "/team5.jpg",
     linkedin: "https://linkedin.com/in/chinweeze",
     twitter: "https://twitter.com/chinweeze",

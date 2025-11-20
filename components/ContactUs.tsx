@@ -5,43 +5,50 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function ContactSection() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<{ type: string; message: string } | null>(null);
+  const [status, setStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setStatus(null);
 
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    // Convert FormData → JSON
+    const json = Object.fromEntries(data.entries());
+
     try {
-      const res = await fetch("/api/contacts", {
+      const res = await fetch("https://formspree.io/f/xblwzzdl", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(json),
       });
 
-      const data = await res.json();
-
       if (res.ok) {
-        setStatus({ type: "success", message: "Message sent successfully!" });
-        setForm({ name: "", email: "", message: "" });
+        setStatus({
+          type: "success",
+          message: "Message sent successfully!",
+        });
+        form.reset();
       } else {
-        setStatus({ type: "error", message: data.error || "Something went wrong." });
+        setStatus({
+          type: "error",
+          message: "Something went wrong. Please try again.",
+        });
       }
-    } catch (error) {
-      setStatus({ type: "error", message: "Network error. Try again." });
+    } catch (err) {
+      setStatus({
+        type: "error",
+        message: "Network error. Please try again.",
+      });
     }
 
     setLoading(false);
@@ -57,7 +64,6 @@ export default function ContactSection() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
         >
           Contact Us
         </motion.h2>
@@ -67,7 +73,6 @@ export default function ContactSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          viewport={{ once: true }}
         >
           Have a project in mind or need our services? We'd love to connect with you.
         </motion.p>
@@ -79,8 +84,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-8"
+            className="space-y-8"
           >
             <div className="flex items-center gap-4">
               <div className="p-4 rounded-full bg-[#001f4d] text-white">
@@ -119,18 +123,14 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
             className="bg-zinc-50 p-8 rounded-xl shadow-lg space-y-6"
           >
             <div>
               <label className="block text-sm font-medium text-black">Name</label>
               <input
                 name="name"
-                value={form.name}
-                onChange={handleChange}
-                type="text"
                 required
-                className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#001f4d] outline-none text-black placeholder:text-gray-700"
+                className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg text-black"
                 placeholder="Your Name"
               />
             </div>
@@ -139,11 +139,9 @@ export default function ContactSection() {
               <label className="block text-sm font-medium text-black">Email</label>
               <input
                 name="email"
-                value={form.email}
-                onChange={handleChange}
                 type="email"
                 required
-                className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#001f4d] outline-none text-black placeholder:text-gray-700"
+                className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg text-black"
                 placeholder="you@example.com"
               />
             </div>
@@ -152,15 +150,14 @@ export default function ContactSection() {
               <label className="block text-sm font-medium text-black">Message</label>
               <textarea
                 name="message"
-                value={form.message}
-                onChange={handleChange}
-                required
-                className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#001f4d] outline-none text-black placeholder:text-gray-700"
                 rows={5}
+                required
+                className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg text-black"
                 placeholder="Write your message..."
               ></textarea>
             </div>
 
+            {/* Status Message */}
             {status && (
               <p
                 className={`text-center font-medium ${
@@ -171,15 +168,15 @@ export default function ContactSection() {
               </p>
             )}
 
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-[#001f4d] text-white font-medium rounded-lg hover:bg-[#003366] transition flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full py-3 bg-[#001f4d] text-white rounded-lg flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {loading ? "Sending..." : "Send Message"} <Send size={18} />
             </button>
           </motion.form>
-
         </div>
       </div>
     </section>
