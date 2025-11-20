@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
@@ -7,8 +8,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { motion, Variants, Easing } from "framer-motion";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 export default function Testimonials() {
+  const swiperRef = useRef<any>(null);
+
   const container: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.2 } },
@@ -40,7 +44,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="bg-zinc-50 py-20">
+    <section className="bg-zinc-50 py-20 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         
         {/* Heading */}
@@ -55,12 +59,32 @@ export default function Testimonials() {
         </motion.h2>
 
         <motion.div
-          className="mt-12"
+          className="mt-12 relative"
           variants={container}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
+          {/* CUSTOM LEFT ARROW */}
+          <button
+            onClick={() => swiperRef.current?.slidePrev()}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 
+              bg-white shadow-lg w-12 h-12 rounded-full flex items-center justify-center
+              text-[#001f4d] hover:bg-[#001f4d] hover:text-white transition"
+          >
+            <FiChevronLeft size={26} />
+          </button>
+
+          {/* CUSTOM RIGHT ARROW */}
+          <button
+            onClick={() => swiperRef.current?.slideNext()}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 
+              bg-white shadow-lg w-12 h-12 rounded-full flex items-center justify-center
+              text-[#001f4d] hover:bg-[#001f4d] hover:text-white transition"
+          >
+            <FiChevronRight size={26} />
+          </button>
+
           <Swiper
             modules={[Pagination, Autoplay]}
             spaceBetween={30}
@@ -68,6 +92,7 @@ export default function Testimonials() {
             pagination={{ clickable: true }}
             autoplay={{ delay: 5000 }}
             loop
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
           >
             {testimonials.map((t, index) => (
               <SwiperSlide key={index}>

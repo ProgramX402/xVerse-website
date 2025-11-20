@@ -8,7 +8,10 @@ import {
   Home, 
   School, 
   Leaf, 
-  Package 
+  Package,
+  Smartphone,
+  CheckCircle,
+  Rocket
 } from "lucide-react";
 
 const services = [
@@ -28,6 +31,11 @@ const services = [
     description: "Build responsive, scalable, and modern web applications."
   },
   {
+    icon: Smartphone,
+    title: "Mobile Development",
+    description: "High-performance Android and iOS apps built for scalability and great user experience."
+  },
+  {
     icon: School,
     title: "Training",
     description: "Upskill your team with our tailored training programs."
@@ -41,6 +49,16 @@ const services = [
     icon: Package,
     title: "Solutions Development",
     description: "Custom software solutions designed to meet your unique needs."
+  },
+  {
+    icon: CheckCircle,
+    title: "QA",
+    description: "Ensure your products meet the highest quality standards through rigorous testing."
+  },
+  {
+    icon: Rocket,
+    title: "Startup Development",
+    description: "We help entrepreneurs build and launch successful startups from idea to execution."
   },
 ];
 

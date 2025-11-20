@@ -6,24 +6,29 @@ import Image from "next/image";
 
 const initiatives = [
   {
-    title: "Tech for the less privileged.",
-    description: "A platform providing tech training and innovation support for the less privileged.",
+    title: "Digital Inclusion",
+    description: "Ensuring everyone has access to digital tools and connectivity to bridge the digital divide.",
     logo: "/init1.jpg",
   },
   {
-    title: "Rural Innovation Network",
-    description: "A movement aimed at bridging the gap between rural areas and modern technology.",
+    title: "Technology Accessibility",
+    description: "Providing accessible tech solutions to empower individuals and communities.",
     logo: "/init2.jpg",
   },
   {
-    title: "StuNnovation",
-    description: "Encouraging innovation by upskilling students.",
+    title: "Migration Support",
+    description: "Supporting communities and individuals in adapting to technological and economic migration challenges.",
     logo: "/init3.jpg",
   },
   {
-    title: "MSME Ignition Network",
-    description: "Reliable and innovative ecosytem for MSMEs to thrive.",
+    title: "MSMEs & Startups",
+    description: "Contributing to business and startup growth through mentorship, resources, and ecosystem support.",
     logo: "/init4.jpg",
+  },
+  {
+    title: "Innovation",
+    description: "Encouraging creative solutions and breakthrough ideas to solve real-world problems.",
+    logo: "/hero.jpg",
   },
 ];
 
@@ -49,7 +54,7 @@ export default function Initiatives() {
         </p>
 
         <motion.div
-          className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -68,7 +73,7 @@ export default function Initiatives() {
                   fill
                   className="object-cover rounded-full"
                   sizes="6rem"
-                  priority={idx === 0} // first image loads faster
+                  priority={idx === 0}
                 />
               </div>
               <h3 className="text-xl font-semibold text-[#001f4d]">{initiative.title}</h3>

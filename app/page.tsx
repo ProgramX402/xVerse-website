@@ -12,6 +12,10 @@ import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
+import FAQSection from "@/components/FAQSection";
+import WhoWeTarget from "@/components/Target";
+
+
 
 export default function Home() {
   return (
@@ -27,10 +31,12 @@ export default function Home() {
         <CoreValues />
         <Projects />
         <Initiatives />
+        <WhoWeTarget />
         <TeamMembers />
         <FounderWord />
         <Accomplishments />
         <Testimonials />
+        <FAQSection />
         <ContactSection />
         <Footer />
         <ChatWidget />

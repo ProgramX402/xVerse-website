@@ -28,7 +28,7 @@ const teamMembers = [
     twitter: "https://twitter.com/davidokoro",
   },
   {
-    name: "Justice Adam",
+    name: "Kinbest Mburs",
     role: "Ecosystem Director and Software Engineer",
     image: "/team4.jpg",
     linkedin: "https://linkedin.com/in/emmanuelnwosu",
@@ -97,8 +97,6 @@ export default function TeamMembers() {
                   <h3 className="text-xl font-semibold text-[#001f4d]">{member.name}</h3>
                   <p className="text-gray-600 mt-1">{member.role}</p>
                   <div className="flex justify-center mt-3 gap-3 text-[#001f4d]">
-                    {member.linkedin && <a href={member.linkedin} target="_blank"><Linkedin size={20} /></a>}
-                    {member.twitter && <a href={member.twitter} target="_blank"><Twitter size={20} /></a>}
                   </div>
                 </div>
               </motion.div>
@@ -122,10 +120,6 @@ export default function TeamMembers() {
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-semibold text-[#001f4d]">{member.name}</h3>
                   <p className="text-gray-600 mt-1">{member.role}</p>
-                  <div className="flex justify-center mt-3 gap-3 text-[#001f4d]">
-                    {member.linkedin && <a href={member.linkedin} target="_blank"><Linkedin size={20} /></a>}
-                    {member.twitter && <a href={member.twitter} target="_blank"><Twitter size={20} /></a>}
-                  </div>
                 </div>
               </motion.div>
             ))}
