@@ -42,7 +42,7 @@ export default function ChatWidget() {
             <div className="flex flex-col space-y-3">
               {/* WhatsApp */}
               <a
-                href="https://wa.me/2349123769790"
+                href="https://wa.me/2348069271286"
                 target="_blank"
                 className="flex items-center gap-3 p-3 rounded-lg border hover:bg-gray-50 transition"
               >
@@ -52,7 +52,7 @@ export default function ChatWidget() {
 
               {/* Phone */}
               <a
-                href="tel:+2349123769790"
+                href="tel:+2348069271286"
                 className="flex items-center gap-3 p-3 rounded-lg border hover:bg-gray-50 transition"
               >
                 <FiPhone size={22} className="text-blue-600" />
@@ -61,7 +61,7 @@ export default function ChatWidget() {
 
               {/* Email */}
               <a
-                href="mailto:princessidebuemi@gmail.com"
+                href="mailto:xverseplatforms@gmail.com"
                 className="flex items-center gap-3 p-3 rounded-lg border hover:bg-gray-50 transition"
               >
                 <FiMail size={22} className="text-red-600" />

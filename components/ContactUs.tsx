@@ -23,7 +23,7 @@ export default function ContactSection() {
     const json = Object.fromEntries(data.entries());
 
     try {
-      const res = await fetch("https://formspree.io/f/xblwzzdl", {
+      const res = await fetch("https://formspree.io/f/mykdpvoe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -92,7 +92,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-[#001f4d]">Email</h3>
-                <p className="text-black">princessidebuemi@gmail.com</p>
+                <p className="text-black">xverseplatforms@gmail.com</p>
               </div>
             </div>
 
@@ -102,7 +102,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-[#001f4d]">Phone</h3>
-                <p className="text-black">+234 912 376 9790</p>
+                <p className="text-black">+234 806 927 1286</p>
               </div>
             </div>
 

@@ -30,7 +30,7 @@ const Hero = () => {
     <section className="relative h-screen bg-zinc-50" id="hero">
       {/* Background Image */}
       <Image
-        src="/hero.jpg"
+        src="/hero2.jpg"
         alt="Background image illustrating tech innovation"
         fill
         priority
@@ -75,13 +75,13 @@ const Hero = () => {
     href="#services"
     className="px-6 py-3 bg-[#001f4d] text-white font-medium rounded-lg hover:bg-[#003366] transition flex items-center gap-2 justify-center"
   >
-    Get Started <ArrowRight size={18} />
+    View Our Services <ArrowRight size={18} />
   </a>
   <a
-    href="#about"
+    href="#contact"
     className="px-6 py-3 border border-white text-white font-medium rounded-lg hover:bg-white hover:text-[#001f4d] transition text-center"
   >
-    Learn More
+    Contact Us
   </a>
 </motion.div>
 

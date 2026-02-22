@@ -56,7 +56,7 @@ const AboutUs = () => {
         >
           <div className="w-full max-w-sm md:max-w-md h-64 md:h-80 relative rounded-xl shadow-lg overflow-hidden">
             <Image
-              src="/about.jpg"
+              src="/about2.jpg"
               alt="About Us"
               fill
               className="object-cover"

@@ -43,9 +43,9 @@ export default function Footer() {
             <Link href="https://web.facebook.com/search/top/?q=xVerse%20Platforms" target="blank" className="hover:text-gray-300">
               <Facebook size={22} />
             </Link>
-            <Link href="#" target="blank" className="hover:text-gray-300">
+            {/* <Link href="#" target="blank" className="hover:text-gray-300">
               <Twitter size={22} />
-            </Link>
+            </Link> */}
             <Link href="https://www.instagram.com/fortress7108/" target="blank" className="hover:text-gray-300">
               <Instagram size={22} />
             </Link>
@@ -60,10 +60,10 @@ export default function Footer() {
           <h3 className="text-xl font-semibold mb-4">Contact</h3>
           <ul className="space-y-4 text-gray-200">
             <li className="flex items-center gap-3">
-              <Mail size={20} /> princessidebuemi@gmail.com
+              <Mail size={20} /> xversepatforms@gmail.com
             </li>
             <li className="flex items-center gap-3">
-              <Phone size={20} /> +234 912 376 979 0
+              <Phone size={20} /> +234 806 927 128 6
             </li>
             <li className="flex items-center gap-3">
               <MapPin size={20} /> Jos, Nigeria

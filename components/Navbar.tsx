@@ -128,7 +128,7 @@ export default function Navbar() {
             <li><MenuLink id="about" label="About" /></li>
             <li><MenuLink id="services" label="Services" /></li>
             <li><MenuLink id="projects" label="Projects" /></li>
-            <li><MenuLink id="initiatives" label="Initiatives" /></li>
+            {/* <li><MenuLink id="initiatives" label="Initiatives" /></li> */}
           </ul>
         </div>
 

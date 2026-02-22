@@ -2,63 +2,59 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  BarChart3, 
-  Briefcase, 
-  Home, 
-  School, 
-  Leaf, 
-  Package,
+import {
+  Globe,
   Smartphone,
+  PenTool,
+  Briefcase,
+  BarChart3,
+  Palette,
+  Megaphone,
+  Layers,
+  Brush,
+  Rocket,
+  Search,
+  Users,
+  TrendingUp,
+  Cloud,
+  Blocks,
+  FileText,
+  Cpu,
   CheckCircle,
-  Rocket
+  Flag,
+  Shield,
+  FlaskConical,
+  Radio,
+  ArrowRight
 } from "lucide-react";
 
 const services = [
+  { icon: Globe, title: "Web Development", description: "Modern, scalable, and high-performance websites and web apps." },
+  { icon: Smartphone, title: "Mobile Development", description: "Android and iOS applications built for performance and scale." },
+  { icon: PenTool, title: "Product & UI/UX Design", description: "User-centered product design that drives engagement and usability." },
+  { icon: Briefcase, title: "IT Consulting", description: "Strategic IT guidance to align technology with business goals." },
+  { icon: BarChart3, title: "Business & ERP Software", description: "Custom ERP and business management systems." },
+  { icon: Palette, title: "Graphic Design", description: "Creative visuals that communicate your brand effectively." },
+  { icon: Megaphone, title: "Digital Marketing", description: "Data-driven marketing strategies for online growth." },
+  { icon: Layers, title: "Solution Design, Architecture & Development", description: "End-to-end system design and implementation." },
+  { icon: Brush, title: "Brand Design", description: "Brand identity systems that stand out and scale." },
+  { icon: Rocket, title: "Brand Launching", description: "Launch strategies that position your brand for success." },
+  { icon: Search, title: "Market Research", description: "Insights and analytics to guide smart business decisions." },
+  { icon: Users, title: "Brand Partnerships & Collaboration", description: "Strategic partnerships that unlock new opportunities." },
+  { icon: TrendingUp, title: "Business Growth", description: "Growth planning, optimization, and execution support." },
+  { icon: Cloud, title: "Cloud Engineering", description: "Secure and scalable cloud infrastructure solutions." },
+  { icon: Blocks, title: "Blockchain Development", description: "Decentralized applications and blockchain integrations." },
+  { icon: FileText, title: "Technical Writing", description: "Clear, structured documentation and technical content." },
+  { icon: Cpu, title: "Internet of Things (IoT)", description: "Smart device integrations and IoT ecosystems." },
+  { icon: CheckCircle, title: "QA Engineering", description: "Quality assurance through rigorous testing processes." },
+  { icon: Flag, title: "Brand Execution", description: "From strategy to execution across all brand touchpoints." },
+  { icon: Shield, title: "Cyber Security", description: "Protect systems, data, and infrastructure from threats." },
+  { icon: FlaskConical, title: "Research & Development", description: "Innovation-driven R&D for future-ready solutions." },
+  { icon: Radio, title: "Tech & Business Media", description: "Content, storytelling, and media for tech and business brands." },
   {
-    icon: BarChart3,
-    title: "ERP Software",
-    description: "Streamline your business operations with our custom ERP solutions."
-  },
-  {
-    icon: Briefcase,
-    title: "Consultancy",
-    description: "Expert advice to optimize your business strategy and growth."
-  },
-  {
-    icon: Home,
-    title: "Web Development",
-    description: "Build responsive, scalable, and modern web applications."
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Development",
-    description: "High-performance Android and iOS apps built for scalability and great user experience."
-  },
-  {
-    icon: School,
-    title: "Training",
-    description: "Upskill your team with our tailored training programs."
-  },
-  {
-    icon: Leaf,
-    title: "Partnership",
-    description: "Collaborate with us to unlock new opportunities and markets."
-  },
-  {
-    icon: Package,
-    title: "Solutions Development",
-    description: "Custom software solutions designed to meet your unique needs."
-  },
-  {
-    icon: CheckCircle,
-    title: "QA",
-    description: "Ensure your products meet the highest quality standards through rigorous testing."
-  },
-  {
-    icon: Rocket,
-    title: "Startup Development",
-    description: "We help entrepreneurs build and launch successful startups from idea to execution."
+    icon: Users,
+    title: "Human Resources & Talent",
+    description: "Talent sourcing, workforce management, and HR solutions for growing businesses."
   },
 ];
 
@@ -70,10 +66,10 @@ export default function Services() {
           Our Services
         </h2>
         <p className="mt-4 text-gray-700 text-center max-w-2xl mx-auto">
-          We offer a range of services to empower your business and help you grow.
+          We provide end-to-end technology, business, and brand solutions.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {services.map((service, idx) => {
             const Icon = service.icon;
             return (
@@ -83,16 +79,28 @@ export default function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="bg-[#001f4d] text-white p-4 rounded-full inline-flex mb-4">
                   <Icon size={28} />
                 </div>
-                <h3 className="text-xl font-semibold text-[#001f4d] mb-2">
+
+                <h3 className="text-lg font-semibold text-[#001f4d] mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600">{service.description}</p>
+
+                <p className="text-gray-600 text-sm mb-6">
+                  {service.description}
+                </p>
+
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 bg-[#001f4d] text-white px-5 py-2 rounded-full text-sm font-medium hover:opacity-90 transition"
+                >
+                  Get Started
+                  <ArrowRight size={16} />
+                </a>
               </motion.div>
             );
           })}

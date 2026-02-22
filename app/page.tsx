@@ -31,13 +31,13 @@ export default function Home() {
         <Services />
         <CoreValues />
         <Projects />
-        <Initiatives />
+        {/* <Initiatives /> */}
         <WhoWeTarget />
-        <TeamMembers />
-        <FounderWord />
-        <Partners />
-        <Accomplishments />
-        <Testimonials />
+        {/* <TeamMembers />
+        <FounderWord /> */}
+        {/* <Partners /> */}
+        {/* <Accomplishments />
+        <Testimonials /> */}
         <FAQSection />
         <ContactSection />
         <Footer />
