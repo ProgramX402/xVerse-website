@@ -25,37 +25,143 @@ import {
   Shield,
   FlaskConical,
   Radio,
-  ArrowRight
+  ArrowRight,
+  Brain,
+  Monitor,
+  Bot
 } from "lucide-react";
 
 const services = [
-  { icon: Globe, title: "Web Development", description: "Modern, scalable, and high-performance websites and web apps." },
-  { icon: Smartphone, title: "Mobile Development", description: "Android and iOS applications built for performance and scale." },
-  { icon: PenTool, title: "Product & UI/UX Design", description: "User-centered product design that drives engagement and usability." },
-  { icon: Briefcase, title: "IT Consulting", description: "Strategic IT guidance to align technology with business goals." },
-  { icon: BarChart3, title: "Business & ERP Software", description: "Custom ERP and business management systems." },
-  { icon: Palette, title: "Graphic Design", description: "Creative visuals that communicate your brand effectively." },
-  { icon: Megaphone, title: "Digital Marketing", description: "Data-driven marketing strategies for online growth." },
-  { icon: Layers, title: "Solution Design, Architecture & Development", description: "End-to-end system design and implementation." },
-  { icon: Brush, title: "Brand Design", description: "Brand identity systems that stand out and scale." },
-  { icon: Rocket, title: "Brand Launching", description: "Launch strategies that position your brand for success." },
-  { icon: Search, title: "Market Research", description: "Insights and analytics to guide smart business decisions." },
-  { icon: Users, title: "Brand Partnerships & Collaboration", description: "Strategic partnerships that unlock new opportunities." },
-  { icon: TrendingUp, title: "Business Growth", description: "Growth planning, optimization, and execution support." },
-  { icon: Cloud, title: "Cloud Engineering", description: "Secure and scalable cloud infrastructure solutions." },
-  { icon: Blocks, title: "Blockchain Development", description: "Decentralized applications and blockchain integrations." },
-  { icon: FileText, title: "Technical Writing", description: "Clear, structured documentation and technical content." },
-  { icon: Cpu, title: "Internet of Things (IoT)", description: "Smart device integrations and IoT ecosystems." },
-  { icon: CheckCircle, title: "QA Engineering", description: "Quality assurance through rigorous testing processes." },
-  { icon: Flag, title: "Brand Execution", description: "From strategy to execution across all brand touchpoints." },
-  { icon: Shield, title: "Cyber Security", description: "Protect systems, data, and infrastructure from threats." },
-  { icon: FlaskConical, title: "Research & Development", description: "Innovation-driven R&D for future-ready solutions." },
-  { icon: Radio, title: "Tech & Business Media", description: "Content, storytelling, and media for tech and business brands." },
+  {
+    icon: Globe,
+    title: "Web Development",
+    description: "Modern, scalable, and high-performance websites and web apps."
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile Development",
+    description: "Android and iOS applications built for performance and scale."
+  },
+  {
+    icon: PenTool,
+    title: "Product & UI/UX Design",
+    description: "User-centered product design that drives engagement and usability."
+  },
+  {
+    icon: Briefcase,
+    title: "IT Consulting",
+    description: "Strategic IT guidance to align technology with business goals."
+  },
+  {
+    icon: BarChart3,
+    title: "Business & ERP Software",
+    description: "Custom ERP and business management systems."
+  },
+  {
+    icon: Palette,
+    title: "Graphic Design",
+    description: "Creative visuals that communicate your brand effectively."
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing",
+    description: "Data-driven marketing strategies for online growth."
+  },
+  {
+    icon: Layers,
+    title: "Solution Design, Architecture & Development",
+    description: "End-to-end system design and implementation."
+  },
+  {
+    icon: Brush,
+    title: "Brand Design",
+    description: "Brand identity systems that stand out and scale."
+  },
+  {
+    icon: Rocket,
+    title: "Brand Launching",
+    description: "Launch strategies that position your brand for success."
+  },
+  {
+    icon: Search,
+    title: "Market Research",
+    description: "Insights and analytics to guide smart business decisions."
+  },
+  {
+    icon: Users,
+    title: "Brand Partnerships & Collaboration",
+    description: "Strategic partnerships that unlock new opportunities."
+  },
+  {
+    icon: TrendingUp,
+    title: "Business Growth",
+    description: "Growth planning, optimization, and execution support."
+  },
+  {
+    icon: Cloud,
+    title: "Cloud Engineering",
+    description: "Secure and scalable cloud infrastructure solutions."
+  },
+  {
+    icon: Blocks,
+    title: "Blockchain Development",
+    description: "Decentralized applications and blockchain integrations."
+  },
+  {
+    icon: FileText,
+    title: "Technical Writing",
+    description: "Clear, structured documentation and technical content."
+  },
+  {
+    icon: Cpu,
+    title: "Internet of Things (IoT)",
+    description: "Smart device integrations and IoT ecosystems."
+  },
+  {
+    icon: CheckCircle,
+    title: "QA Engineering",
+    description: "Quality assurance through rigorous testing processes."
+  },
+  {
+    icon: Flag,
+    title: "Brand Execution",
+    description: "From strategy to execution across all brand touchpoints."
+  },
+  {
+    icon: Shield,
+    title: "Cyber Security",
+    description: "Protect systems, data, and infrastructure from threats."
+  },
+  {
+    icon: FlaskConical,
+    title: "Research & Development",
+    description: "Innovation-driven R&D for future-ready solutions."
+  },
+  {
+    icon: Radio,
+    title: "Tech & Business Media",
+    description: "Content, storytelling, and media for tech and business brands."
+  },
   {
     icon: Users,
     title: "Human Resources & Talent",
     description: "Talent sourcing, workforce management, and HR solutions for growing businesses."
   },
+  {
+    icon: Brain,
+    title: "AI / ML Engineering",
+    description: "Artificial intelligence and machine learning solutions that automate, predict, and scale."
+  },
+  {
+    icon: Monitor,
+    title: "Computer Hardware",
+    description: "Hardware supply, setup, maintenance, and enterprise-grade computer solutions."
+  },
+  {
+    icon: Bot,
+    title: "Robotics",
+    description: "Robotics systems, automation, and intelligent machine solutions."
+  }
 ];
 
 export default function Services() {
@@ -65,6 +171,7 @@ export default function Services() {
         <h2 className="text-3xl md:text-4xl font-bold text-[#001f4d] text-center">
           Our Services
         </h2>
+
         <p className="mt-4 text-gray-700 text-center max-w-2xl mx-auto">
           We provide end-to-end technology, business, and brand solutions.
         </p>

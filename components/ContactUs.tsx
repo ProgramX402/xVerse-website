@@ -126,7 +126,7 @@ export default function ContactSection() {
             className="bg-zinc-50 p-8 rounded-xl shadow-lg space-y-6"
           >
             <div>
-              <label className="block text-sm font-medium text-black">Name</label>
+              <label className="block text-sm font-medium text-black">Full Name</label>
               <input
                 name="name"
                 required
