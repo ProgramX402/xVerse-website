@@ -6,12 +6,49 @@ import Link from "next/link";
 import Image from "next/image";
 
 const projects = [
+   {
+    title: "Thrive Merchant",
+    description: "A platform that provide banking tools for informal cooperatives.",
+    image: "/project6.png",
+    link: "https://thrivemerchant.loveable.app/",
+  },
+  {
+    title: "ChainPay",
+    description: "An non-custodial crypto payment and transaction platform.",
+    image: "/project11.png",
+    link: "https://chainpay.loveable.app/",
+  },
+  {
+    title: "AgriPilot",
+    description: "AI-powered farm assistant and farm management system.",
+    image: "/project8.png",
+    link: "https://agripilot.loveable.app/",
+  },
+  {
+    title: "BeautyShop",
+    description: "An eCommerce website for a fashion brand.",
+    image: "/project5.png",
+    link: "https://beautyshopnaija.loveable.app/",
+  },
+  {
+    title: "CryptoFolio",
+    description: "An app for tracking your crypto investment across multiple wallets.",
+    image: "/project7.png",
+    link: "https://cyrptofolioapp.loveable.app/",
+  },
+  {
+    title: "StudySphere",
+    description: "An app for students to connect and interact.",
+    image: "/project9.png",
+    link: "https://studysphereconnect.loveable.app/",
+  },
   {
     title: "Medicare",
     description: "A smart hospital management dashboard.",
     image: "/project1.png",
     link: "https://medicareconnect.netlify.app/",
   },
+
   {
     title: "Orphanage Website",
     description: "A cool public facing website for JCRFCF orphanage.",

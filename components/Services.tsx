@@ -138,6 +138,11 @@ const services = [
     description: "Innovation-driven R&D for future-ready solutions."
   },
   {
+    icon: FlaskConical,
+    title: "Technology Real Estate & Setup",
+    description: "Office spaces, data centers and work space for tech professionals and companies."
+  },
+  {
     icon: Radio,
     title: "Tech & Business Media",
     description: "Content, storytelling, and media for tech and business brands."
